@@ -1,7 +1,13 @@
 // syntax of initial block
 
+
 initial begin
+
+
+
     // Your code here
+
+    
 end
 
 //
