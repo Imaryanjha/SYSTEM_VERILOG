@@ -1,0 +1,9 @@
+timescale 1ps/1ps
+
+module tb();
+  int arr[5] = '{1,2,3,4,5};
+
+  initial begin
+    $display ("arr : %p", arr);// %p is format Specifier 
+  end
+endmodule
