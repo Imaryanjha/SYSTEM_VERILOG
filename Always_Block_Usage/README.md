@@ -31,8 +31,18 @@ end
 
    | Style                            | Works in SystemVerilog? | Recommended? | Why?                             |
 | -------------------------------- | ----------------------- | ------------ | -------------------------------- |
+
 | `always @(*)`                    | ✅ Yes                   | ❌ Not ideal  | Less strict, prone to bugs       |
+
+
+
 | `always @(posedge clk)`          | ✅ Yes                   | ❌ Not ideal  | May accidentally mix logic types |
+
+
+
+
+
+
 | `always @(a or b)` (for latches) | ✅ Yes                   | ❌ Risky      | Can infer unintended latches     |
 
 
