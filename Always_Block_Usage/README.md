@@ -1,14 +1,14 @@
 In Verilog We Know that to implement the always block for Combinational, Sequential And Latches Following are the syntax :-
 
 
-1. Combinational Logic                                                        1. Combinational Logic
-                                                                                 always_comb  // For system verilog                           
+1. Combinational Logic                                                                          1. Combinational Logic
+                                                                                                         always_comb  // For system verilog                           
 always @(*) begin
-  out = a & b;                                                                2. Flip Fop (Sequential LOGIC )
-                                                                                 always_ff @(posedge clk)
+  out = a & b;                                                                                      2. Flip Fop (Sequential LOGIC )
+                                                                                                             always_ff @(posedge clk)
 end
-// @(*) means "whenever any input changes"                                    3. For Latches
-                                                                                    always_latch
+// @(*) means "whenever any input changes"                                                                3. For Latches
+                                                                                                                      always_latch
 // Used for combinational logic (like gates)
 
 // Replaces assign in some cases
