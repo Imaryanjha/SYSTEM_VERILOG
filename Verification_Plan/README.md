@@ -1,7 +1,7 @@
-# 🧪 SystemVerilog Verification Plan Template
+# 🧪 SystemVerilog Verification Plan 
 
-Welcome to the **SystemVerilog Verification Plan** repository!  
-This project provides a structured and reusable template to create and manage verification plans for your SystemVerilog testbenches — whether you're working on small blocks (like a FIFO) or large SoC modules.
+ 
+This repo provides a structured and reusable template to create and manage verification plans for your SystemVerilog testbenches — whether you're working on small blocks (like a FIFO) or large SoC modules.
 
 ---
 
