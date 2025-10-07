@@ -1,0 +1,13 @@
+`timescale 1ns / 1ps
+
+
+
+module tb_q;
+    int arr[$];  // $ sign to specify queue - SEMICOLON ADDED
+ 
+    initial begin
+        arr = {1,2,3};  // no need to USE ' before { } for queue initialization
+        $display("arr:%0p", arr);
+    end 
+
+endmodule
