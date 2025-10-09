@@ -1,1 +1,29 @@
+## //Example of FSM Without Enum
 
+reg [1:0] state;
+parameter IDLE=2'b00, READ = 2'b01, WRITE=2'b10;
+
+always_ff@(posedge clk) begin
+case(state)
+
+IDLE:state<=READ;
+READ:state<=WRITE;
+WRITE:state<=IDLE;
+
+endcase
+end
+
+## //Example of FSM With Enum
+
+
+enum logic[1:0] {IDLE,READ,WRITE} state;
+
+always_ff@(posedge clk) begin
+case(state)
+
+IDLE:state<=READ;
+READ:state<=WRITE;
+WRITE:state<=IDLE;
+
+endcase
+end
