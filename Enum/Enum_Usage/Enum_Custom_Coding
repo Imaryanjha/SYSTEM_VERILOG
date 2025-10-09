@@ -1,0 +1,21 @@
+//We can define an enum with a specific underlying datatype and size.
+type_def enum logic [2:0]
+{
+IDLE = 3'b000,
+READ = 3'b001,
+WRITE = 3'b010,
+}state_t;
+
+module stat_enum;
+state_t current_state; // typedef
+initial begin
+
+current_state = READ;
+
+$display("current state; %s (%0d)", current_state.name(),current_state);
+
+end
+endmodule
+
+// output:
+// current state : READ (1)
