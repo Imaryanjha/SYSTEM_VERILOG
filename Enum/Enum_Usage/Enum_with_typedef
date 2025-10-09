@@ -1,0 +1,11 @@
+typedef enum {Red,Green,Blue} color_t;
+module enum type_def_example
+color_t led_color; // here the color_t is accessed with led_color
+
+initial begin
+led_color = Blue;
+$display("led color value is = %d", led_color);
+$display("led color= %s", led_color.name());
+
+end
+endmodule
