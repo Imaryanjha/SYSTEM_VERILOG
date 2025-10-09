@@ -1,0 +1,10 @@
+module enum_example;
+enum {Red,Green,Blue}Color;
+initial begin
+  Color = Green;
+
+$display("Color Value= %0d", Color);
+$display("Color name= %0s", Color.name());//color.name()
+
+end 
+endmodule
