@@ -1,50 +1,58 @@
-In Verilog We Know that to implement the always block for Combinational, Sequential And Latches Following are the syntax :-
+# Verilog vs SystemVerilog: Always Block Usage
 
+This document summarizes the implementation of **always blocks** in **Verilog** and **SystemVerilog** for combinational logic, sequential logic (flip-flops), and level-sensitive latches.
 
-1. Combinational Logic// For Verilog                                                                      ✔ 1. Combinational Logic// For System Verilog
-                                                                                                         always_comb                            
+---
+
+## 1. Combinational Logic
+
+### Verilog
+```verilog
 always @(*) begin
-  out = a & b;                                                                                          
+  out = a & b;
 end
-// @(*) means "whenever any input changes"                                                             
-// Used for combinational logic (like gates)
+```
 
-// Replaces assign in some cases
+## System Verilog
+```systemverilog
+always_comb begin
+  out = a & b;
+end
+```
 
-
-2. Sequential Logic (Flip-Flops)// For Verilog
-                                                                                                   ✔2. Flip Fop (Sequential LOGIC ) // For System Verilog
-                                                                                                             always_ff @(posedge clk)
-   always @(posedge clk or negedge resetn) begin
+## 2. Sequential Logic (Flip-Flops)
+```Verilog
+always @(posedge clk or negedge resetn) begin
   if (!resetn)
     q <= 0;
   else
     q <= d;
 end
+```
+## SystemVerilog
+``` SystemVerilog
+always_ff @(posedge clk) begin
+  if (!resetn)
+    q <= 0;
+  else
+    q <= d;
+end
+```
 
+## 3. Level-Sensitive Latches
 
-3. for level-sensitive latches  // For Verilog                                                      ✔3. For Latches //// For System Verilog
-                                                                                                                      always_latch
-   always @(enable or d)
+### Verilog
+```verilog
+always @(enable or d) begin
+  if (enable)
+    q = d;
+end
+```
 
-
-
-   | Style                            | Works in SystemVerilog? | Recommended? | Why?                             |
-| -------------------------------- | ----------------------- | ------------ | -------------------------------- |
-
-| `always @(*)`                    | ✅ Yes                   | ❌ Not ideal  | Less strict, prone to bugs       |
-
-
-
-| `always @(posedge clk)`          | ✅ Yes                   | ❌ Not ideal  | May accidentally mix logic types |
-
-
-
-
-
-
-| `always @(a or b)` (for latches) | ✅ Yes                   | ❌ Risky      | Can infer unintended latches     |
-
-
-
-      
+### SystemVerilog
+```systemverilog
+always_latch begin
+  if (enable)
+    q = d;
+end
+```
