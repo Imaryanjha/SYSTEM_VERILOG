@@ -1,7 +1,7 @@
 # 🧪 SystemVerilog Verification Plan 
 
  
-This repo provides a structured and reusable template to create and manage verification plans for your SystemVerilog testbenches — whether you're working on small blocks (like a FIFO) or large SoC modules.
+
 
 ---
 
@@ -19,11 +19,5 @@ It ensures your verification effort is **complete**, **traceable**, and **system
 ├── README.md               # You're here!
 ├── verification_plan.md    # Markdown version of the plan
 ├── verification_plan.xlsx  # Excel version (editable)
-├── docs/
-│   └── coverage_goals.pdf  # Coverage planning guide
-├── examples/
-│   └── fifo/
-│       ├── fifo_design.v
-│       ├── fifo_tb.sv
-│       └── test_scenarios.txt
+
 
